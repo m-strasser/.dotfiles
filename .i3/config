@@ -40,6 +40,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec dmenu_run -nb '#333333' -nf '#888888' -sb '#0088CC' -sf '#dddddd' -fn 'Icons-8'
 
 # start dunst notification daemon
+exec killall -q fsnotify_mark	# kill running notification manager
 exec --no-startup-id dunst -config ~/.i3/dunstrc
 
 # start network-manager-applet
