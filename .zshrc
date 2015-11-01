@@ -5,7 +5,18 @@ export ZSH=~/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="theunraveler"
+ZSH_THEME="mytheme"
+
+# COMPLETION SETTINGS
+# add custom completion scripts
+fpath=(~/.oh-my-zsh/completion $fpath)
+
+# compsys initialization
+autoload -U compinit
+compinit
+
+# show completion menu when number of options is at least 2
+zstyle ':completion:*' menu select = 2
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -82,4 +93,4 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+#source ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
