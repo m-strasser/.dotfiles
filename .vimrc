@@ -24,6 +24,11 @@ Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
+Plugin 'jceb/vim-orgmode'
+Plugin 'tpope/vim-speeddating'
+Plugin 'tpope/vim-repeat'
+Plugin 'itchyny/calendar.vim'
+Plugin 'ervandew/eclim'
 
 call vundle#end()
 
@@ -38,6 +43,7 @@ set shiftwidth=8
 set noexpandtab
 set relativenumber
 set hlsearch 				"Highlight search results
+
 
 " Markdown settings
 let g:vim_markdown_folding_disabled=1
@@ -57,8 +63,13 @@ if (exists('+colorcolumn'))
 endif
 
 " Keybindings
-nnoremap - ddp  "Moves current line down
-nnoremap _ ddkP "Moves current line up
+"Moves current line down
+nnoremap - ddp
+"Moves current line up
+nnoremap _ ddkP
+" FAST BUFFER MOVEMENT
+nnoremap <Leader>l :bnext<CR>
+nnoremap <Leader>h :bprevious<CR>
 
 " Turn off pymode autoimport bullshit
 let g:pymode_rope_autoimport = 0
