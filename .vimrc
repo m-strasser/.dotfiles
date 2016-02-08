@@ -29,6 +29,7 @@ Plugin 'tpope/vim-speeddating'
 Plugin 'tpope/vim-repeat'
 Plugin 'itchyny/calendar.vim'
 Plugin 'ervandew/eclim'
+Plugin 'chriskempson/base16-vim'
 
 call vundle#end()
 
@@ -49,9 +50,7 @@ set hlsearch 				"Highlight search results
 let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_math=1
 
-let mapleader = " "			"Set leader to ,
-
-let g:lightline = {'colorscheme' : 'wombat'}
+let mapleader = " "			"Set leader to space
 
 " IndentLine Settings
 let g:indentLine_char = '|'
@@ -79,5 +78,10 @@ let g:SuperTabDefaultCompletionType = 'context'
 set list
 set listchars=tab:>\ 
 highlight SpecialKey ctermfg=8
+
+set term=xterm-256color
+let base16colorspace=256
+set background=dark
+colorscheme base16-monokai
 
 filetype plugin indent on

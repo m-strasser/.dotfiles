@@ -1,22 +1,29 @@
 # Path to your oh-my-zsh installation.
-export ZSH=~/.oh-my-zsh
+  export ZSH=/home/mstrasser/.oh-my-zsh
+
+HISTFILE=~/.zsh_history
+HISTSIZE=1000
+SAVEHIST=1000
+bindkey -v
+
+alias netctl='sudo netctl' systemctl='sudo systemctl' pacman='sudo pacman'
+alias powertop='sudo powertop'
+
+export PATH=/home/mstrasser/.bin/:/home/mstrasser/.cargo/bin:$PATH
+export EDITOR=vim
+export TERM="xterm-256color"
+
+bindkey '^R' history-incremental-pattern-search-backward
+
+# Base16
+BASE16_SHELL="$HOME/.config/base16-shell/base16-monokai.dark.sh"
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="mytheme"
-
-# COMPLETION SETTINGS
-# add custom completion scripts
-fpath=(~/.oh-my-zsh/completion $fpath)
-
-# compsys initialization
-autoload -U compinit
-compinit
-
-# show completion menu when number of options is at least 2
-zstyle ':completion:*' menu select = 2
+ZSH_THEME="robbyrussell"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -60,11 +67,11 @@ zstyle ':completion:*' menu select = 2
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vi-mode)
+plugins=(git)
 
 # User configuration
 
-export PATH="/usr/lib64/qt-3.3/bin:/usr/local/bin:/bin:/usr/bin:/home/mstrasser/bin:/usr/local/sbin:/usr/sbin:/home/mstrasser/.local/bin"
+  export PATH="/home/mstrasser/.bin/:/home/mstrasser/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/android-sdk/tools:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -93,4 +100,3 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-#source ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
