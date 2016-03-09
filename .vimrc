@@ -30,6 +30,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'itchyny/calendar.vim'
 Plugin 'ervandew/eclim'
 Plugin 'chriskempson/base16-vim'
+Plugin 'junegunn/fzf'
 
 call vundle#end()
 
@@ -69,6 +70,7 @@ nnoremap _ ddkP
 " FAST BUFFER MOVEMENT
 nnoremap <Leader>l :bnext<CR>
 nnoremap <Leader>h :bprevious<CR>
+nnoremap <Leader>p :CtrlP<CR>
 
 " Turn off pymode autoimport bullshit
 let g:pymode_rope_autoimport = 0
