@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/mstrasser/.oh-my-zsh
+  export ZSH=$HOME/.oh-my-zsh
 
 HISTFILE=~/.zsh_history
 HISTSIZE=1000
@@ -9,7 +9,6 @@ bindkey -v
 alias netctl='sudo netctl' systemctl='sudo systemctl' pacman='sudo pacman'
 alias powertop='sudo powertop'
 
-export PATH=/home/mstrasser/.bin/:/home/mstrasser/.cargo/bin:$PATH
 export EDITOR=vim
 export TERM="xterm-256color"
 
@@ -67,11 +66,11 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git, vi-mode)
 
 # User configuration
 
-  export PATH="/home/mstrasser/.bin/:/home/mstrasser/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/android-sdk/tools:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
+  export PATH="$HOME/.gem/ruby/2.3.0/bin:$HOME/.bin/:$HOME/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/android-sdk/tools:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -100,3 +99,5 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
