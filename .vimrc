@@ -7,7 +7,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'rust-lang/rust.vim'
 Plugin 'vim-scripts/Conque-GDB'
-Plugin 'klen/python-mode'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'itchyny/lightline.vim'
 Plugin 'gergap/wombat256'
@@ -31,6 +30,10 @@ Plugin 'itchyny/calendar.vim'
 Plugin 'ervandew/eclim'
 Plugin 'chriskempson/base16-vim'
 Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'regedarek/ZoomWin'
+Plugin 'othree/html5.vim'
 
 call vundle#end()
 
@@ -46,6 +49,9 @@ set noexpandtab
 set relativenumber
 set hlsearch 				"Highlight search results
 
+" Enable per-directory vimrcs
+set exrc
+set secure
 
 " Markdown settings
 let g:vim_markdown_folding_disabled=1
@@ -85,5 +91,63 @@ set term=xterm-256color
 let base16colorspace=256
 set background=dark
 colorscheme base16-monokai
+
+"
+" FZF Customization
+" Mapping selecting mappings
+nnoremap <leader>j :FZF<CR>
+
+" Map <leader>Enter to buffer search
+function! s:buflist()
+  redir => ls
+  silent ls
+  redir END
+  return split(ls, '\n')
+endfunction
+
+function! s:bufopen(e)
+  execute 'buffer' matchstr(a:e, '^[ 0-9]*')
+endfunction
+
+nnoremap <silent> <Leader><Enter> :call fzf#run({
+\   'source':  reverse(<sid>buflist()),
+\   'sink':    function('<sid>bufopen'),
+\   'options': '+m',
+\   'down':    len(<sid>buflist()) + 2
+\ })<CR>
+
+"
+" YouCompleteMe options
+"
+let g:ycm_register_as_syntastic_checker = 1 "default 1
+let g:ycm_show_diagnostics_ui = 1 "default 1
+
+"will put icons in Vim's gutter on lines that have a diagnostic set.
+"Turning this off will also turn off the YcmErrorLine and YcmWarningLine
+"highlighting
+let g:ycm_enable_diagnostic_signs = 1
+let g:ycm_enable_diagnostic_highlighting = 0
+let g:ycm_always_populate_location_list = 1 "default 0
+let g:ycm_open_loclist_on_ycm_diags = 1 "default 1
+
+
+let g:ycm_complete_in_strings = 1 "default 1
+let g:ycm_collect_identifiers_from_tags_files = 0 "default 0
+let g:ycm_path_to_python_interpreter = '' "default ''
+
+
+let g:ycm_server_use_vim_stdout = 0 "default 0 (logging to console)
+let g:ycm_server_log_level = 'info' "default info
+
+
+let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'  "where to search for .ycm_extra_conf.py if not found
+let g:ycm_confirm_extra_conf = 1
+
+
+let g:ycm_goto_buffer_command = 'same-buffer' "[ 'same-buffer', 'horizontal-split', 'vertical-split', 'new-tab' ]
+let g:ycm_filetype_whitelist = { '*': 1 }
+let g:ycm_key_invoke_completion = '<C-Space>'
+
+nnoremap <F11> :YcmForceCompileAndDiagnostics <CR>
 
 filetype plugin indent on
