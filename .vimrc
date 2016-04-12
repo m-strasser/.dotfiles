@@ -34,6 +34,7 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'regedarek/ZoomWin'
 Plugin 'othree/html5.vim'
+Plugin 'klen/python-mode'
 
 call vundle#end()
 
