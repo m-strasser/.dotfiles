@@ -93,6 +93,19 @@ let base16colorspace=256
 set background=dark
 colorscheme base16-monokai
 
+" Autoclose scratch buffer on omnicomplete
+autocmd CompleteDone * pclose
+
+"
+" Python Mode Customization
+"
+
+" Turn off autocompletion because it competes with YCM
+let g:pymode_rope_complete_on_dot = 0
+" Turn off documentation and bind it to C-d
+let g:pymode_doc = 0
+let g:pymode_doc_bind = '<C-d>'
+
 "
 " FZF Customization
 " Mapping selecting mappings
