@@ -35,6 +35,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'regedarek/ZoomWin'
 Plugin 'othree/html5.vim'
 Plugin 'klen/python-mode'
+Plugin 'benmills/vimux'
 
 call vundle#end()
 
@@ -107,6 +108,12 @@ let g:pymode_doc = 0
 let g:pymode_doc_bind = '<C-d>'
 
 "
+" VIMUX Customization
+"
+" <Leader><CR> sends current line to tmux split
+nnoremap <leader><CR> :call VimuxPromptCommand(getline('.')) <CR>
+
+"
 " FZF Customization
 " Mapping selecting mappings
 nnoremap <leader>j :FZF<CR>
@@ -123,7 +130,7 @@ function! s:bufopen(e)
   execute 'buffer' matchstr(a:e, '^[ 0-9]*')
 endfunction
 
-nnoremap <silent> <Leader><Enter> :call fzf#run({
+nnoremap <silent> <Leader>b :call fzf#run({
 \   'source':  reverse(<sid>buflist()),
 \   'sink':    function('<sid>bufopen'),
 \   'options': '+m',
@@ -133,6 +140,7 @@ nnoremap <silent> <Leader><Enter> :call fzf#run({
 "
 " YouCompleteMe options
 "
+let g:ycm_server_python_interpreter = "/usr/bin/python"
 let g:ycm_register_as_syntastic_checker = 1 "default 1
 let g:ycm_show_diagnostics_ui = 1 "default 1
 
@@ -162,6 +170,6 @@ let g:ycm_goto_buffer_command = 'same-buffer' "[ 'same-buffer', 'horizontal-spli
 let g:ycm_filetype_whitelist = { '*': 1 }
 let g:ycm_key_invoke_completion = '<C-Space>'
 
-nnoremap <F11> :YcmForceCompileAndDiagnostics <CR>
+"nnoremap <F11> :YcmForceCompileAndDiagnostics <CR>
 
 filetype plugin indent on
