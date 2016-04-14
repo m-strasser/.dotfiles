@@ -70,7 +70,7 @@ plugins=(git, vi-mode)
 
 # User configuration
 
-  export PATH="$HOME/.gem/ruby/2.3.0/bin:$HOME/.bin/:$HOME/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/android-sdk/tools:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$PATH"
+  export PATH="$HOME/.gem/ruby/2.3.0/bin:$HOME/.bin/:$HOME/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/android-sdk/tools:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$HOME/.config/scripts/:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
