@@ -335,6 +335,9 @@
 		<!--<command>dmenu_run -nb #222222 -sb #076073 -h 25 -w 1800</command>-->
 	</action>
   </keybind>
+  <keybind key="W-F11">
+	<action name="ToggleFullscreen"/>
+  </keybind>
   <keybind key="W-m">
 	<action name="ToggleMaximizeFull"/>
   </keybind>
