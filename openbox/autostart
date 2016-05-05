@@ -16,8 +16,8 @@
 #
 #xfce-mcs-manager &
 
+cairocompmgr &
 feh --bg-scale $HOME/wallpaper.jpg
 tint2 &
-eval "$(ssh-agent)"
-jack_control start
-qjackctl &
+volumeicon &
+synclient TouchpadOff=1
