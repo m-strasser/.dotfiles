@@ -9,14 +9,16 @@ bindkey -v
 alias netctl='sudo netctl' systemctl='sudo systemctl' pacman='sudo pacman'
 alias powertop='sudo powertop'
 
+alias push-sepm='git push && notify-jenkins'
+
 export EDITOR=vim
 export TERM="xterm-256color"
 
 bindkey '^R' history-incremental-pattern-search-backward
 
 # Base16
-BASE16_SHELL="$HOME/.config/base16-shell/base16-monokai.dark.sh"
-[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+#BASE16_SHELL="$HOME/.config/base16-shell/base16-monokai.dark.sh"
+#[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/

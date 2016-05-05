@@ -39,6 +39,9 @@ Plugin 'benmills/vimux'
 
 call vundle#end()
 
+" Start pathogen
+exec pathogen#infect()
+
 syntax on				"Syntax highlighting on
 
 set laststatus=2			"Show powerline
@@ -81,8 +84,9 @@ nnoremap <Leader>h :bprevious<CR>
 nnoremap <Leader>p :CtrlP<CR>
 
 " Turn off pymode autoimport bullshit
-let g:pymode_rope_autoimport = 0
+"let g:pymode_rope_autoimport = 0
 let g:SuperTabDefaultCompletionType = 'context'
+let g:pymode_virtualenv = 1
 
 " Show tabs
 set list
@@ -90,9 +94,10 @@ set listchars=tab:>\
 highlight SpecialKey ctermfg=8
 
 set term=xterm-256color
-let base16colorspace=256
+"let base16colorspace=256
 set background=dark
-colorscheme base16-monokai
+colorscheme solarized
+let g:solarized_termcolors=256
 
 " Autoclose scratch buffer on omnicomplete
 autocmd CompleteDone * pclose
@@ -172,4 +177,5 @@ let g:ycm_key_invoke_completion = '<C-Space>'
 
 "nnoremap <F11> :YcmForceCompileAndDiagnostics <CR>
 
+se t_Co=16
 filetype plugin indent on
