@@ -9,7 +9,6 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'vim-scripts/Conque-GDB'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'itchyny/lightline.vim'
-Plugin 'gergap/wombat256'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
@@ -28,7 +27,6 @@ Plugin 'tpope/vim-speeddating'
 Plugin 'tpope/vim-repeat'
 Plugin 'itchyny/calendar.vim'
 Plugin 'ervandew/eclim'
-Plugin 'chriskempson/base16-vim'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'Valloric/YouCompleteMe'
@@ -91,13 +89,11 @@ let g:pymode_virtualenv = 1
 " Show tabs
 set list
 set listchars=tab:>\ 
-highlight SpecialKey ctermfg=8
+"highlight SpecialKey ctermfg=8
 
-set term=xterm-256color
 "let base16colorspace=256
 set background=dark
 colorscheme solarized
-let g:solarized_termcolors=256
 
 " Autoclose scratch buffer on omnicomplete
 autocmd CompleteDone * pclose
