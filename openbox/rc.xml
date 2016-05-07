@@ -335,6 +335,12 @@
 		<!--<command>dmenu_run -nb #222222 -sb #076073 -h 25 -w 1800</command>-->
 	</action>
   </keybind>
+  <keybind key="W-p">
+	<action name="Execute">
+		<name>pavucontrol</name>
+		<command>pavucontrol</command>
+	</action>
+  </keybind>
   <keybind key="W-F11">
 	<action name="ToggleFullscreen"/>
   </keybind>
