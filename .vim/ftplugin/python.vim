@@ -4,3 +4,6 @@ nmap { [M
 
 " <leader> + Enter runs current script in ipython
 nnoremap <leader><CR> :call VimuxRunCommand('ipython ' . expand('%:p')) <CR>
+
+set foldlevelstart=10
+set nofoldenable

@@ -6,7 +6,6 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'rust-lang/rust.vim'
-Plugin 'vim-scripts/Conque-GDB'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'itchyny/lightline.vim'
 Plugin 'scrooloose/syntastic'
@@ -46,9 +45,9 @@ set laststatus=2			"Show powerline
 set number				"Show linenumbers
 set cursorline				"Show a visual line under current one
 set showmatch				"Show matching brackets
-set tabstop=8
-set shiftwidth=8
-set noexpandtab
+set expandtab
+let tabstop = 4
+let shiftwidth = 4
 set relativenumber
 set hlsearch 				"Highlight search results
 
@@ -61,6 +60,10 @@ let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_math=1
 
 let mapleader = " "			"Set leader to space
+
+" Key Bindings
+
+nnoremap <Leader>n :NERDTree<CR>
 
 " IndentLine Settings
 let g:indentLine_char = '|'
@@ -131,7 +134,7 @@ function! s:bufopen(e)
   execute 'buffer' matchstr(a:e, '^[ 0-9]*')
 endfunction
 
-nnoremap <silent> <Leader>b :call fzf#run({
+nnoremap <silent> <Leader><Leader> :call fzf#run({
 \   'source':  reverse(<sid>buflist()),
 \   'sink':    function('<sid>bufopen'),
 \   'options': '+m',

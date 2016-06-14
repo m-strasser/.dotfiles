@@ -1,3 +1,5 @@
+urxvt*depth: 		32
+!urxvt*background:	#002b36
 URxvt.iso14755:         false
 URxvt.iso14755_52:      false
 URxvt.intensityStyles: 	false
@@ -65,7 +67,7 @@ URxvt.keysym.C-S-Down: 	perl:font-size:decsave
 ! To only apply colors to your terminal, for example, prefix
 ! the color assignment statement with its name. Example:
 !
-! URxvt*background:            S_base03
+!URxvt*background:         S_base03
 
 *background:              S_base03
 *foreground:              S_base0
