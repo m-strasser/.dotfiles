@@ -6,10 +6,7 @@ HISTSIZE=1000
 SAVEHIST=1000
 bindkey -v
 
-alias netctl='sudo netctl' systemctl='sudo systemctl' pacman='sudo pacman'
-alias powertop='sudo powertop'
-
-alias push-sepm='git push && notify-jenkins'
+eval $(ssh-agent)
 
 export EDITOR=vim
 export TERM="xterm-256color"
