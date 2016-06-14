@@ -1,5 +1,5 @@
 # Set main color
-MCOLOR='magenta'
+MCOLOR='green'
 NOCOLOR=''
 
 local ret_status="%(?:%{$fg_bold[$MCOLOR]%}➜ :%{$fg_bold[red]%}➜ )"
