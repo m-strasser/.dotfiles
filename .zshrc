@@ -8,7 +8,6 @@ bindkey -v
 
 alias netctl='sudo netctl' systemctl='sudo systemctl' pacman='sudo pacman'
 alias powertop='sudo powertop'
-alias vpntu='sudo openconnect --user e1208048@student.tuwien.ac.at https://vpn.tuwien.ac.at'
 
 export EDITOR=vim
 export TERM="xterm-256color"
@@ -23,7 +22,7 @@ bindkey '^R' history-incremental-pattern-search-backward
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="my"
+ZSH_THEME="robbyrussell"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -102,3 +101,9 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+if [ ! $TMUX ]; then
+        echo "-------------------------------------------------------------------------"
+        dig +short txt istheinternetonfire.com
+        echo "-------------------------------------------------------------------------"
+fi

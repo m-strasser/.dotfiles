@@ -33,6 +33,13 @@ Plugin 'regedarek/ZoomWin'
 Plugin 'othree/html5.vim'
 Plugin 'klen/python-mode'
 Plugin 'benmills/vimux'
+Plugin 'pangloss/vim-javascript'
+Plugin 'burnettk/vim-angular'
+Plugin 'othree/javascript-libraries-syntax.vim'
+Plugin 'matthewsimo/angular-vim-snippets'
+Plugin 'digitaltoad/vim-pug'
+Plugin 'Kazark/vim-SimpleSmoothScroll'
+Plugin 'Shutnik/jshint2.vim'
 
 call vundle#end()
 
@@ -175,6 +182,27 @@ let g:ycm_filetype_whitelist = { '*': 1 }
 let g:ycm_key_invoke_completion = '<C-Space>'
 
 "nnoremap <F11> :YcmForceCompileAndDiagnostics <CR>
+
+au BufNewFile,BufRead *.handlebars set filetype=html
+
+let concealcursor = ""
+
+""" JS HINT SETTINGS
+let jshint2_save = 1
+
+""" PERSONAL FUNCTIONS """
+nnoremap <Leader>pp :!push_to_zimbra %:p %:t
+
+""" UMLAUTS """
+" execute "set <M-O>=\eO"
+inoremap <C-o>o Ö
+inoremap <C-a>a Ä
+inoremap <C-u>u Ü
+inoremap <C-e> €
+inoremap <C-o> ö
+inoremap <C-a> ä
+inoremap <C-u> ü
+inoremap s<C-z> ß
 
 se t_Co=16
 filetype plugin indent on
