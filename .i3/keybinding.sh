@@ -1,1 +1,0 @@
-/home/unicorn/dev/shellscripts/keybinding.sh
