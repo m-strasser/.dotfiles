@@ -83,3 +83,12 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+# SSH VAULT Settings
+SSH_VAULT_VM="ssh-vault"
+
+if [ "$SSH_VAULT_VM" != "" ]; then
+	export SSH_AUTH_SOCK=~user/.SSH_AGENT_$SSH_VAULT_VM
+fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
