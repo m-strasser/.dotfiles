@@ -40,6 +40,8 @@ nnoremap <silent> <leader><leader> :call fzf#run(fzf#wrap({
 set ts=4
 set sw=4
 
+set statusline=%{fugitive#statusline()}\ %f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+
 set nu
 set relativenumber
 syntax on
