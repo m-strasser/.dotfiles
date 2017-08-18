@@ -43,8 +43,9 @@ if [ $? -ne 0 ]; then
 	echo "Cloning Vundle failed, exiting"
 	#exit 1
 fi
+
 SCRIPTPATH=$( cd $(dirname $0) ; pwd -P )
-+echo "Overwriting .vimrc, .tmux.conf and .zshrc..."
+echo "Overwriting .vimrc, .tmux.conf and .zshrc..."
 mv $HOME/.vimrc $HOME/.vimrc.bak
 mv $HOME/.zshrc $HOME/.zshrc.bak
 mv $HOME/.tmux.conf $HOME/.tmux.conf.bak
@@ -53,5 +54,11 @@ ln -s $SCRIPTPATH/.vimrc $HOME/.vimrc
 ln -s $SCRIPTPATH/.zshrc $HOME/.zshrc
 ln -s $SCRIPTPATH/.tmux.conf $HOME/.tmux.conf
 echo "Set up symlinks to .dotfiles repo for .vimrc, .tmux.conf and .zshrc"
+
+mv $HOME/.vim/ftplugin $HOME/.vim/ftplugin.bak
+echo "Backed up old .vim/ftplugins as .vim/ftplugins.bak"
+ln -s $SCRIPTPATH/ftplugin/ $HOME/.vim/ftplugin
+echo "Set up symlink to .vim/ftplugin"
+
 echo "Installing vim plugins..."
 vim +PlugInstall +qall
