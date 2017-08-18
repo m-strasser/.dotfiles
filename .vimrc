@@ -6,6 +6,8 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'vim-syntastic/syntastic'
+Plug 'Valloric/YouCompleteMe'
+Plug 'mileszs/ack.vim'
 call plug#end()
 
 let mapleader = " "
@@ -36,6 +38,10 @@ nnoremap <silent> <leader><leader> :call fzf#run(fzf#wrap({
 \	'options':	'+m',
 \	'down':		len(<sid>buflist()) + 2
 \}))<CR>
+
+" Maybe add some standard flags here
+" An ftplugin would be useful to search only matching filetypes?
+nnoremap <leader>a :Ack 
 
 set ts=4
 set sw=4
