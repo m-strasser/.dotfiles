@@ -91,4 +91,20 @@ if [ "$SSH_VAULT_VM" != "" ]; then
 	export SSH_AUTH_SOCK=~user/.SSH_AGENT_$SSH_VAULT_VM
 fi
 
+# DOCKER-COMPOSE COMPLETION
+fpath=(~/.zsh/completion $fpath)
+autoload -Uz compinit && compinit -i
+
+# More Onion stuff
+source ~/motools/dev-config.bashrc
+export WWWDIR=/home/user/www
+alias drupy="drupy --devel --overrides-dir=$HOME/more-onion/overrides/"
+
+# Virtualenv fix
+source "/usr/share/virtualenvwrapper/virtualenvwrapper.sh"
+export WORKON_HOME="$HOME/.virtualenvs"
+
+export PATH=$PATH:$HOME/bin/
+export TERM="xterm-256color"
+source ~/.zsh/zsh-dircolors-solarized/zsh-dircolors-solarized.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
